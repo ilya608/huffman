@@ -4,7 +4,7 @@
 
 #include "file_writer.h"
 
-file_writer::file_writer(string const &filename) : writer(filename, ofstream::binary), cur_ind(0) {}
+file_writer::file_writer(string const &filename) : writer(filename, std::ios::out | ofstream::binary), cur_ind(0) {}
 
 file_writer::~file_writer() {
     writer.write(buffer, cur_ind);
