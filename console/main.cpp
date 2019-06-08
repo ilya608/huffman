@@ -18,22 +18,6 @@ void help() {
     std::cout << "For decompress use: \"decompress File_input File_output\"\n";
 }
 
-std::vector<string> parse_command(string command) {
-    std::vector<string> result;
-    size_t last = 0;
-    for (size_t i = 0; i < command.length(); ++i) {
-        if (command[i] == ' ') {
-            if (i > last) {
-                result.push_back(command.substr(last, i - last));
-            }
-
-            last = i + 1;
-        }
-    }
-    result.push_back(command.substr(last));
-    return result;
-}
-
 void console_compress(string in, string out) {
     std::cout << "Compressing..." << '\n' << '\n';
     try {
