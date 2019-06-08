@@ -40,5 +40,3 @@ std::pair<encoded_bytes, std::vector<byte>> encoder::encoded_tree() {
     encode_tree(tree.root);
     return {treeBytes, alp};
 }
-
-

@@ -71,7 +71,7 @@ int main(int argc, char *argv[]) {
     } else if (argc == 4 && string(argv[1]) == "decompress") {
         console_decompress(argv[2], argv[3]);
     } else {
-        std::cout << " Wrong console arguments\n Write \"help\" to watch list commands";
+        std::cout << "Wrong console arguments\n Write \"help\" to watch list commands\n";
     }
     return 0;
 }

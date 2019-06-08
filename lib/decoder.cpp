@@ -20,7 +20,7 @@ std::vector<byte> decoder::decode(const encoded_bytes& encodedBytes) {
         //std::cout << "x = " << (int)x << " last = " << encodedBytes.size_last << '\n';
         size_t pos = 0;
         while ((i != encodedBytes.size() - 1 && pos < 8) || (i == encodedBytes.size() - 1 && pos < encodedBytes.size_last)) {
-            //std::cout << "x' =  " << (int)x << '\n';
+            // std::cout << "x' =  " << (int)x << '\n';
             pos++;
             auto cur = static_cast<size_t>(x % 2);
             data.push_back((bool) cur);
@@ -30,7 +30,7 @@ std::vector<byte> decoder::decode(const encoded_bytes& encodedBytes) {
     huffman_tree::node *v = tree.root;
     std::vector<byte> res;
     for (auto i : data) {
-        //std::cout << "i = " << i << '\n';
+        // std::cout << "i = " << i << '\n';
         if (!i) {
             v = v->l;
         } else {

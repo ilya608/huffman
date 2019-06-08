@@ -4,12 +4,13 @@
 
 #include "file_reader.h"
 
-file_reader::file_reader(std::string const &filename) : reader(filename, std::ios::binary), name(filename),
+file_reader::file_reader(std::string const &filename) : reader(filename, std::ios::out | std::ios::binary), name(filename),
                                                         cur_ind(0), end_ind(0) {
-    if (reader.fail()) {
+    if (!reader) {
         reader.close();
         throw std::runtime_error("No file");
     }
+    // FILE *f = fopen(filename, "r");
 
 }
 

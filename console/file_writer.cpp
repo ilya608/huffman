@@ -20,8 +20,7 @@ void file_writer::write(byte c) {
     buffer[cur_ind++] = static_cast<char>(c);
 }
 
-void file_writer::write_short(uint16_t x)
-{
+void file_writer::write_short(uint16_t x) {
     write(static_cast<byte>(x >> 8));
     write(static_cast<byte>((x << 8) >> 8));
 }
